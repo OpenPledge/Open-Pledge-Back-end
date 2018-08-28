@@ -1,0 +1,9 @@
+  {
+    items: [
+      {
+        name: 'Milk',
+        quantity: '1000',
+        servingSize: 'oz'
+      }
+    ]
+  }

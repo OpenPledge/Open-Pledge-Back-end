@@ -49,6 +49,10 @@ django-anymail = {extras = ["mailgun"], version = "==3.0"}
 Pillow = "==5.2.0"
 "argon2_cffi" = "==18.3.0"
 Django = "==2.0.8"
+django-admin = "*"
+django-debug-toolbar = "*"
+django-extensions = "*"
+django-tastypie = "*"
 
 [requires]
 python_version = "3.6"
