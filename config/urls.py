@@ -8,9 +8,19 @@ from wishlist import views
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path('wishlist/get/<int:userId>', views.get_wishlist),
+    # WISHLIST API
+    # Get a specific wishlist with wishlistId
+    path('wishlist/get/<int:wishlistId>', views.get_wishlist),
+    # Get all wishlists owned by userId passed in
+    path('wishlist/get_all/<int:userId>', views.get_wishlists),
+    # Make a new wishlist owned by userId passed in
     path('wishlist/new/<int:userId>', views.new_wishlist),
+    # Update wishlist with wishlistId
     path('wishlist/update/<int:wishlistId>', views.update_wishlist),
+    # Delete wishlist with wishlistId
+    path('wishlist/delete/<int:wishlistId>', views.delete_wishlist),
+    # TODO: PLEDGE API
+
     path(
         "about/",
         TemplateView.as_view(template_name="pages/about.html"),
