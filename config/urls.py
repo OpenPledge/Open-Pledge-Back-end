@@ -8,8 +8,9 @@ from wishlist import views
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path('wishlist/get-wishlist/<int:userId>', views.get_wishlist),
-    path('wishlist/new-wishlist/<int:userId>', views.new_wishlist),
+    path('wishlist/get/<int:userId>', views.get_wishlist),
+    path('wishlist/new/<int:userId>', views.new_wishlist),
+    path('wishlist/update/<int:wishlistId>', views.update_wishlist),
     path(
         "about/",
         TemplateView.as_view(template_name="pages/about.html"),
