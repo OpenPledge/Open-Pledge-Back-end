@@ -5,6 +5,8 @@ from wishlist.models import Pledge
 from django.forms import ModelForm
 from django.http import JsonResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
+from django.views.decorators.csrf import csrf_exempt
+
 import json
 
 # Create your views here.
@@ -19,63 +21,83 @@ class WishListForm(ModelForm):
 class WishListItemForm(ModelForm):
     class Meta:
         model = WishListItem
-        fields = ['wishList', 'name', 'quantity', 'unit', 'needed', 'pledged']
+        fields = ['wish_list', 'name', 'unit', 'needed', 'pledged']
 
 
 class PledgeForm(ModelForm):
     class Meta:
         model = Pledge
-        fields = ['owner', 'wishList']
+        fields = ['owner', 'wish_list']
 
 # WishList CRUD API operations
 # get_wish_list_ids: returns all of the user's wishLists based on user ID
 # get_wishList: returns a specific wishList based on wishList ID
-# get_wishListItems: returns all items for a specified wishlist
+# get_wishListItems: returns all items for a specified wishList
 # new_wish_list: creates a new wishList based on user ID, owned by that user
 # update_wish_list: updates a wishList based on a specific wishList ID
 # delete_wishList: deletes a wishList based on a specific wishList ID 
 
 
-def get_wish_list_ids(request, userId):
-    wish_list_ids = WishList.objects.filter(owner_id=userId).values_list('id', flat=True).order_by('id')
+def get_user_info(request):
+    return JsonResponse({
+        "user_id": request.user.id,
+    })
+
+
+def get_wish_list_ids(request, user_id):
+    wish_list_ids = WishList.objects.filter(owner_id=user_id).values_list('id', flat=True).order_by('id')
 
     return JsonResponse({
         "data": wish_list_ids,
     })
 
 
-def get_wish_list_items(request, wishListId):
-    my_wish_list = WishList.objects.get(id=wishListId)
-    my_wish_list_as_dicts = my_wish_list.values('name', 'quantity', 'unit', 'needed', 'pledged')
+def get_wish_list_items(request, wish_list_id):
+    items = WishListItem.objects.filter(wish_list_id=wish_list_id)
+    items_list = list(items.values('name', 'unit', 'needed', 'pledged'))
+    print(items_list)
     return JsonResponse({
-        "data": my_wish_list_as_dicts,
+        "data": items_list,
     })
 
 
-def new_wish_list(request, userId):
+@csrf_exempt
+def new_wish_list_item(request, wish_list_id):
     if request.method == "POST":
         input_data = json.dumps(request.body, seperators=(',', ':'))
-        my_wishList = WishList(input_data.title, userId)
-        my_wishList.save()
-        print(my_wishList)
+        print(input_data)
+        item = WishListItem(
+            wish_list_id,
+            input_data.name,
+            input_data.unit,
+            input_data.needed,
+            input_data.pledged)
+        item.save()
 
 
-def update_wish_list(request, wishListId):
+def new_wish_list(request, user_id):
+    if request.method == "POST":
+        input_data = json.dumps(request.body, seperators=(',', ':'))
+        my_wish_list = WishList(input_data.title, user_id)
+        my_wish_list.save()
+        print(my_wish_list)
+
+
+def update_wish_list(request, wish_list_id):
     input_data = json.dumps(request.body, seperators=(',', ':'))
-    my_wishList = WishList.objects.get(id=wishListId)
-    my_wishList.name = input_data.name
-    my_wishList.quantity = input_data.quantity
-    my_wishList.unit = input_data.unit
-    my_wishList.needed = input_data.needed
-    my_wishList.pledged = input_data.pledged
-    my_wishList.save()
-    print('updated wishList', my_wishList)
+    my_wish_list = WishList.objects.get(id=wish_list_id)
+    my_wish_list.name = input_data.name
+    my_wish_list.unit = input_data.unit
+    my_wish_list.needed = input_data.needed
+    my_wish_list.pledged = input_data.pledged
+    my_wish_list.save()
+    print('updated wishList', my_wish_list)
 
 
-def remove_wish_list(request, wishListId):
-    my_wishList = WishList.objects.filter(id=wishListId)
-    print('deleting wishList', my_wishList)
-    my_wishList.delete()
+def remove_wish_list(request, wish_list_id):
+    my_wish_list = WishList.objects.filter(id=wish_list_id)
+    print('deleting wishList', my_wish_list)
+    my_wish_list.delete()
 
 
 # Pledge CRUD API Operations
@@ -85,15 +107,15 @@ def remove_wish_list(request, wishListId):
 # update_pledge: updates a pledge based on a specific pledge ID 
 # delete_pledge: deletes a pledge based on a specific pledge ID
 
-def get_pledges_by_user(request, userId):
-    my_pledges = Pledge.objects.filter(owner_id=userId).data
+def get_pledges_by_user(request, user_id):
+    my_pledges = Pledge.objects.filter(owner_id=user_id).data
     return JsonResponse({
         "data": my_pledges
     })
 
 
-def get_pledges_by_wish_list(request, wishListId):
-    wishList_pledges = Pledge.objects.filter(wish_list=wishListId).data
+def get_pledges_by_wish_list(request, wish_list_id):
+    wishList_pledges = Pledge.objects.filter(wish_list=wish_list_id).data
     return JsonResponse({
         "data": wishList_pledges
     })
@@ -106,10 +128,10 @@ def get_pledge(request, pledgeId):
     })
 
 
-def new_pledge(request, userId):
+def new_pledge(request, user_id):
     if request.method == "POST":
         input_data = json.dumps(request.body, seperators=(',', ':'))
-        my_pledge = Pledge(input_data, userId)
+        my_pledge = Pledge(input_data, user_id)
         my_pledge.save()
         print('created pledge', my_pledge)
 

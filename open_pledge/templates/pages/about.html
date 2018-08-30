@@ -1,1 +1,16 @@
 {% extends "base.html" %}
+
+{#  THIS IS OUR EXAMPLE REACT PAGe #}
+
+{%  block content %}
+
+<script>
+  // Store USER_ID as a global variable, so that react can access it
+  window.USER_ID = {{ request.user.id }};
+</script>
+
+{#  Get compiled react file #}
+<div id="root"></div> {#  WHERE react will go #}
+<script src="/static/js/main.ae438a.js"></script>
+
+{%  block content %}
