@@ -4,21 +4,30 @@ from open_pledge.users.models import User
 # Create your models here.
 
 
-class Wishlist(models.Model):
+class WishList(models.Model):
     # id is created by default
-    data = models.CharField(max_length=1800)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+#    created_at = models.DateTimeField(auto_now_add=True
+    def __str__(self):
+        return '%s owned by %s' % (self.title, self.owner)
 
-#    created_at = models.DateTimeField(auto_now_add=True)
+
+class WishListItem(models.Model):
+    wishList = models.ForeignKey(WishList, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    quantity = models.IntegerField()
+    unit = models.CharField(max_length=20)
+    needed = models.IntegerField()
+    pledged = models.IntegerField()
 
     def __str__(self):
-        return '%s owned by %s' % (self.data, self.owner)
-
+        return 'WishList - %s - %s %s %s - Needed: %s - Pledged: %s' % (self.wishList, self.name, self.quantity, self.unit, self.needed, self.pledged)
 
 class Pledge(models.Model):
     # id is created by default
-    data = models.CharField(max_length=1800)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    wishList = models.ForeignKey(WishList, on_delete=models.CASCADE)
 
     def __str__(self):
-        return '%s owned by %s' % (self.data, self.owner)
+        return '%s %s' % (self.wishList, self.owner)

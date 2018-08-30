@@ -10,15 +10,15 @@ urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
     # WISHLIST API
     # Get a specific wishlist with wishlistId
-    path('wishlist/get/<int:wishlistId>', views.get_wishlist),
+    path('wishlist/get/<int:wishListId>', views.get_wishList),
     # Get all wishlists owned by userId passed in
-    path('wishlist/get_all/<int:userId>', views.get_wishlists),
+    path('wishlist/get_all/<int:userId>', views.get_wish_list_ids),
     # Make a new wishlist owned by userId passed in
-    path('wishlist/new/<int:userId>', views.new_wishlist),
+    path('wishlist/new/<int:userId>', views.new_wish_list),
     # Update wishlist with wishlistId
-    path('wishlist/update/<int:wishlistId>', views.update_wishlist),
+    path('wishlist/update/<int:wishListId>', views.update_wish_list),
     # Delete wishlist with wishlistId
-    path('wishlist/delete/<int:wishlistId>', views.delete_wishlist),
+    path('wishlist/delete/<int:wishListId>', views.remove_wish_list),
     # TODO: PLEDGE API
 
     path(
