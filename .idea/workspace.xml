@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ba587d7-400a-49bc-87fb-98f78ec4ea48" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wishlist/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,7 +23,12 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FUSProjectUsageTrigger">
@@ -44,6 +49,7 @@
           <entry key="md" value="1" />
           <entry key="py" value="39" />
           <entry key="rst" value="1" />
+          <entry key="sql" value="1" />
           <entry key="wishlist_wishlist" value="3" />
         </counts>
       </usages-collector>
@@ -55,6 +61,7 @@
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Python" value="39" />
+          <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -63,7 +70,7 @@
           <entry key="dummy" value="60" />
           <entry key="html" value="395" />
           <entry key="json" value="47" />
-          <entry key="py" value="6382" />
+          <entry key="py" value="6649" />
           <entry key="rst" value="3" />
           <entry key="sql" value="8" />
         </counts>
@@ -73,7 +80,7 @@
           <entry key="HTML" value="395" />
           <entry key="JSON" value="47" />
           <entry key="PLAIN_TEXT" value="63" />
-          <entry key="Python" value="6382" />
+          <entry key="Python" value="6649" />
           <entry key="SQL" value="8" />
           <entry key="Scratch" value="4" />
         </counts>
@@ -85,10 +92,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wishlist/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+            <state relative-caret-position="252">
+              <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
               <folding>
-                <marker date="1535674964456" expanded="true" signature="1199:1200" ph="..." />
+                <marker date="1535677109481" expanded="true" signature="1199:1200" ph="..." />
+                <marker date="1535677109481" expanded="true" signature="1690:1821" ph="..." />
               </folding>
             </state>
           </provider>
@@ -134,7 +142,7 @@
         <entry file="file://$PROJECT_DIR$/config/settings/base.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="333">
-              <caret line="137" column="61" lean-forward="true" selection-start-line="137" selection-start-column="61" selection-end-line="137" selection-end-column="61" />
+              <caret line="137" column="61" selection-start-line="137" selection-start-column="61" selection-end-line="137" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -143,7 +151,7 @@
         <entry file="file://$PROJECT_DIR$/open_pledge/users/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+              <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -151,8 +159,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+            <state relative-caret-position="360">
+              <caret line="20" column="60" lean-forward="true" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -164,16 +172,7 @@
         <entry file="file://$PROJECT_DIR$/open_pledge/users/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="371">
-              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.local/share/virtualenvs/Back-end-dqVGAQnW/lib/python3.6/site-packages/django/views/generic/detail.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
             </state>
           </provider>
         </entry>
@@ -335,7 +334,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42955000" />
+    <option name="totallyTimeSpent" value="44723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -533,28 +532,31 @@
     <entry file="file://$PROJECT_DIR$/config/settings/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
-          <caret line="137" column="61" lean-forward="true" selection-start-line="137" selection-start-column="61" selection-end-line="137" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/open_pledge/users/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <caret line="137" column="61" selection-start-line="137" selection-start-column="61" selection-end-line="137" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/open_pledge/users/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b6220370-e4d6-4295-a506-a483c73e4064/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/open_pledge/users/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+        <state relative-caret-position="360">
+          <caret line="20" column="60" lean-forward="true" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -563,10 +565,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wishlist/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+        <state relative-caret-position="252">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
           <folding>
-            <marker date="1535674964456" expanded="true" signature="1199:1200" ph="..." />
+            <marker date="1535677109481" expanded="true" signature="1199:1200" ph="..." />
+            <marker date="1535677109481" expanded="true" signature="1690:1821" ph="..." />
           </folding>
         </state>
       </provider>

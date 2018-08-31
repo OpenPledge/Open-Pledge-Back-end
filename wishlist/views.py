@@ -57,6 +57,13 @@ def get_wish_list_ids(request, user_id):
     })
 
 
+def get_all_wish_lists(request):
+    wish_lists = list(WishList.objects.all().values('title', 'id'))
+    return JsonResponse({
+        "data": wish_lists
+    })
+
+
 def get_wish_list_items(request, wish_list_id):
     items = WishListItem.objects.filter(wish_list_id=wish_list_id)
     items_list = list(items.values('name', 'unit', 'needed', 'pledged'))
@@ -66,7 +73,6 @@ def get_wish_list_items(request, wish_list_id):
     })
 
 
-@csrf_exempt
 def new_wish_list_item(request, wish_list_id):
     if request.method == "POST":
         input_data = json.dumps(request.body, seperators=(',', ':'))
