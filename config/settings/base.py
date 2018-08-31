@@ -239,3 +239,5 @@ SOCIALACCOUNT_ADAPTER = 'open_pledge.users.adapters.SocialAccountAdapter'
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+SESSION_COOKIE_HTTPONLY = False
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"

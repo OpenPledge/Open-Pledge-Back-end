@@ -39,9 +39,14 @@ class PledgeForm(ModelForm):
 
 
 def get_user_info(request):
-    return JsonResponse({
-        "user_id": request.user.id,
-    })
+    if request.user.is_authenticated():
+        return JsonResponse({
+            "user_id": request.user.id,
+        })
+    else:
+        return JsonResponse({
+            "error": "You ain't logged in."
+        })
 
 
 def get_wish_list_ids(request, user_id):
