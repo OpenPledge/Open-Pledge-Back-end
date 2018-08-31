@@ -4,9 +4,11 @@ from wishlist.models import WishListItem
 from wishlist.models import Pledge
 from django.forms import ModelForm
 from django.http import JsonResponse
+from django.http import HttpResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.csrf import csrf_exempt
-
+from rest_framework import generics
+from wishlist.serializers import WishListItemSerializer
 import json
 
 # Create your views here.
@@ -39,38 +41,52 @@ class PledgeForm(ModelForm):
 
 
 def get_user_info(request):
+    print(request.user)
     if request.user.is_authenticated:
-        return JsonResponse({
+        response = JsonResponse({
             "user_id": request.user.id,
         })
+        response["Access-Control-Allow-Origin"] = "*"
+        return response
     else:
-        return JsonResponse({
+        print('user is not authenticated', request)
+        response = JsonResponse({
             "error": "You ain't logged in."
         })
+        response["Access-Control-Allow-Origin"] = "*"
+        return response
 
 
 def get_wish_list_ids(request, user_id):
     wish_list_ids = WishList.objects.filter(owner_id=user_id).values_list('id', flat=True).order_by('id')
-
-    return JsonResponse({
+    response = JsonResponse({
         "data": wish_list_ids,
     })
+    response["Access-Control-Allow-Origin"] = "*"
+    return response
 
 
 def get_all_wish_lists(request):
     wish_lists = list(WishList.objects.all().values('title', 'id'))
-    return JsonResponse({
-        "data": wish_lists
+    for item in wish_lists:
+        wish_list_items = list(WishListItem.objects.filter(wish_list=item['id']).values())
+        item['items'] = wish_list_items
+    response = JsonResponse({
+        "data": wish_lists,
     })
+    response["Access-Control-Allow-Origin"] = "*"
+    return response
 
 
 def get_wish_list_items(request, wish_list_id):
     items = WishListItem.objects.filter(wish_list_id=wish_list_id)
     items_list = list(items.values('name', 'unit', 'needed', 'pledged'))
     print(items_list)
-    return JsonResponse({
+    response = JsonResponse({
         "data": items_list,
     })
+    response["Access-Control-Allow-Origin"] = "*"
+    return response
 
 
 def new_wish_list_item(request, wish_list_id):
