@@ -39,7 +39,7 @@ class PledgeForm(ModelForm):
 
 
 def get_user_info(request):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         return JsonResponse({
             "user_id": request.user.id,
         })

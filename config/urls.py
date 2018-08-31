@@ -8,6 +8,8 @@ from wishlist import views
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    # USER INFO API
+    path('current_user', views.get_user_info),
     # WISHLIST API
     # Get a specific wishlist with wishlistId
     path('wishlist/get/<int:wish_list_id>', views.get_wish_list_items),
