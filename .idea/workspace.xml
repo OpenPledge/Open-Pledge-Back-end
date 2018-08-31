@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ba587d7-400a-49bc-87fb-98f78ec4ea48" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/settings/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings/production.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings/production.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wishlist/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist/views.py" afterDir="false" />
     </list>
@@ -43,7 +42,7 @@
           <entry key="html" value="2" />
           <entry key="json" value="2" />
           <entry key="md" value="1" />
-          <entry key="py" value="38" />
+          <entry key="py" value="39" />
           <entry key="rst" value="1" />
           <entry key="wishlist_wishlist" value="3" />
         </counts>
@@ -55,7 +54,7 @@
           <entry key="JSON" value="2" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="38" />
+          <entry key="Python" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -64,7 +63,7 @@
           <entry key="dummy" value="60" />
           <entry key="html" value="395" />
           <entry key="json" value="47" />
-          <entry key="py" value="6323" />
+          <entry key="py" value="6382" />
           <entry key="rst" value="3" />
           <entry key="sql" value="8" />
         </counts>
@@ -74,7 +73,7 @@
           <entry key="HTML" value="395" />
           <entry key="JSON" value="47" />
           <entry key="PLAIN_TEXT" value="63" />
-          <entry key="Python" value="6323" />
+          <entry key="Python" value="6382" />
           <entry key="SQL" value="8" />
           <entry key="Scratch" value="4" />
         </counts>
@@ -86,10 +85,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wishlist/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="335">
+              <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
               <folding>
-                <marker date="1535674062164" expanded="true" signature="1199:1200" ph="..." />
+                <marker date="1535674964456" expanded="true" signature="1199:1200" ph="..." />
               </folding>
             </state>
           </provider>
@@ -145,6 +144,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -209,7 +220,6 @@
         <option value="$PROJECT_DIR$/open_pledge/users/models.py" />
         <option value="$PROJECT_DIR$/wishlist/migrations/0003_auto_20180827_1939.py" />
         <option value="$PROJECT_DIR$/wishlist/migrations/0004_auto_20180827_1942.py" />
-        <option value="$PROJECT_DIR$/config/urls.py" />
         <option value="$PROJECT_DIR$/wishlist/admin.py" />
         <option value="$PROJECT_DIR$/wishlist/models.py" />
         <option value="$PROJECT_DIR$/../algopractice/practice.py" />
@@ -217,6 +227,7 @@
         <option value="$PROJECT_DIR$/config/settings/production.py" />
         <option value="$PROJECT_DIR$/config/settings/base.py" />
         <option value="$PROJECT_DIR$/open_pledge/users/views.py" />
+        <option value="$PROJECT_DIR$/config/urls.py" />
         <option value="$PROJECT_DIR$/wishlist/views.py" />
       </list>
     </option>
@@ -324,13 +335,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42010000" />
+    <option name="totallyTimeSpent" value="42955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14994664" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14994664" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -346,7 +357,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.327818" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.327818" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Version Control" order="11" />
@@ -470,16 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/settings/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-29" />
@@ -550,12 +551,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wishlist/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="335">
+          <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
           <folding>
-            <marker date="1535674062164" expanded="true" signature="1199:1200" ph="..." />
+            <marker date="1535674964456" expanded="true" signature="1199:1200" ph="..." />
           </folding>
         </state>
       </provider>
