@@ -57,10 +57,14 @@ def get_user_info(request):
         return response
 
 
-def get_wish_list_ids(request, user_id):
-    wish_list_ids = WishList.objects.filter(owner_id=user_id).values_list('id', flat=True).order_by('id')
+def get_wish_lists_by_user(request, user_id):
+    wish_lists = list(WishList.objects.filter(owner_id=user_id).values('title', 'id'))
+    for item in wish_lists:
+        wish_list_items = list(WishListItem.objects.filter(wish_list=item['id']).values())
+        item['items'] = wish_list_items
+
     response = JsonResponse({
-        "data": wish_list_ids,
+        "data": wish_lists,
     })
     response["Access-Control-Allow-Origin"] = "*"
     return response

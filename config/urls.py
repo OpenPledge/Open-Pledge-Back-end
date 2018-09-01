@@ -8,8 +8,9 @@ from wishlist import views
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    # USER INFO API
+    # returns current user id
     path('current_user', views.get_user_info),
+    # this prefixes all urls in wishlist/urls.py with api/
     path("api/", include('wishlist.urls')),
     path(
         "about/",
