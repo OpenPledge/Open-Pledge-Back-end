@@ -9,9 +9,19 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import generics
 from wishlist.serializers import WishListItemSerializer
+from wishlist.serializers import WishListSerializer
 import json
 
 # Create your views here.
+
+class WishListCreate(generics.ListCreateAPIView):
+    queryset = WishList.objects.all()
+    serializer_class = WishListSerializer
+
+
+class WishListItemCreate(generics.ListCreateAPIView):
+    queryset = WishListItem.objects.all()
+    serializer_class = WishListItemSerializer
 
 
 class WishListForm(ModelForm):

@@ -6,6 +6,9 @@ from wishlist import endpoints
 
 urlpatterns = [
     # Django rest framework style (not in use)
+    path('wishlists/', views.WishListCreate.as_view()),
+    path('wishlists_items/', views.WishListItemCreate.as_view()),
+
     # path('wishlist', endpoints.WishListViewSet),
 
     # WISHLIST API

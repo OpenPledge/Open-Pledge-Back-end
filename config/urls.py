@@ -7,7 +7,7 @@ from django.views import defaults as default_views
 from wishlist import views
 
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path("", TemplateView.as_view(template_name="index.html"), name="home"),
     # returns current user id
     path('current_user', views.get_user_info),
     # this prefixes all urls in wishlist/urls.py with api/
