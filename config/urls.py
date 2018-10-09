@@ -15,6 +15,7 @@ urlpatterns = [
     # this prefixes all urls in wishlist/urls.py with api/
     path("api/", include('wishlist.urls')),
     path('token-auth/', obtain_jwt_token),
+    path("core/", include('core.urls')),
     path(
         "about/",
         TemplateView.as_view(template_name="pages/about.html"),
