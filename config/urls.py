@@ -5,6 +5,8 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from wishlist import views
+from rest_framework_jwt.views import obtain_jwt_token
+
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="index.html"), name="home"),
@@ -12,6 +14,7 @@ urlpatterns = [
     path('current_user', views.get_user_info),
     # this prefixes all urls in wishlist/urls.py with api/
     path("api/", include('wishlist.urls')),
+    path('token-auth/', obtain_jwt_token),
     path(
         "about/",
         TemplateView.as_view(template_name="pages/about.html"),
